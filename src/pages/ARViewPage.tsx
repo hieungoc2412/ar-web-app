@@ -1,5 +1,6 @@
 
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import QRCodeDisplay from '../components/QRCodeDisplay';
