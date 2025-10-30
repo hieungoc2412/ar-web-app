@@ -1,0 +1,7 @@
+{
+  "name": "AR Mirror Showcase",
+  "description": "A modern web application to showcase and experience AR-enabled mirrors in your own space using your device's camera.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
