@@ -11,6 +11,7 @@ export const PRODUCTS: Product[] = [
     // Placeholder model from Google's <model-viewer> examples
     modelUrl: '/DemoImage/glb/guong1.glb',
     iosModelUrl: '/DemoImage/usdz/guong1.usdz',
+    qr: '/DemoImage/qr/guong1-qr.png',
   },
   {
     id: 'vintage-mirror',

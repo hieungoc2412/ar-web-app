@@ -55,7 +55,7 @@ const ARViewPage: React.FC = () => {
           <div className="mt-6 sm:mt-10 p-4 sm:p-6 bg-white rounded-lg shadow-md">
             <h3 className="text-md sm:text-lg font-semibold text-center">Scan to View in Your Space</h3>
             <div className="mt-3 sm:mt-4 flex justify-center">
-              <QRCodeDisplay url={window.location.href} />
+              <QRCodeDisplay imageSrc={product.qr} url={window.location.href} />
             </div>
             <p className="mt-3 sm:mt-4 text-xs text-gray-500 text-center">
               Open your phone's camera and point it at the QR code to launch the AR experience.
