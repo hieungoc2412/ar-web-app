@@ -13,20 +13,4 @@ export interface Product {
 
 // FIX: Moved global JSX declaration here to correctly augment IntrinsicElements.
 // TypeScript declaration for the <model-viewer> custom element
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
-        src: string;
-        'ios-src'?: string;
-        alt: string;
-        ar?: boolean;
-        'ar-modes'?: string;
-        'camera-controls'?: boolean;
-        'auto-rotate'?: boolean;
-        class?: string;
-        style?: React.CSSProperties;
-      }, HTMLElement>;
-    }
-  }
-}
+// ĐÃ XOÁ để tránh xung đột. Khai báo đã được chuyển sang src/types/custom-elements.d.ts
