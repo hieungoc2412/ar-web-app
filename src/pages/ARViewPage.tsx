@@ -18,7 +18,7 @@ const ARViewPage: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="text-center py-20">
+      <div className="text-center py-16 sm:py-20">
         <h2 className="text-2xl font-bold">Product not found</h2>
         <Link to="/products" className="text-indigo-600 hover:underline mt-4 inline-block">
           Back to Products
@@ -28,11 +28,11 @@ const ARViewPage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+    <div className="container mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-14">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* 3D Model Viewer */}
         <div className="lg:col-span-3">
-          <div className="aspect-w-1 aspect-h-1 w-full bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+          <div className="aspect-square w-full bg-gray-200 rounded-lg overflow-hidden shadow-lg mb-8 lg:mb-0">
              <model-viewer
                 src={product.modelUrl}
                 ios-src={product.iosModelUrl}
@@ -42,23 +42,22 @@ const ARViewPage: React.FC = () => {
                 camera-controls
                 auto-rotate
                 class="w-full h-full"
-                style={{minHeight: '400px'}}
+                style={{minHeight: '300px'}}
               ></model-viewer>
           </div>
         </div>
 
         {/* Product Info & QR Code */}
-        <div className="lg:col-span-2">
-          <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
-          <p className="mt-2 text-3xl font-bold text-indigo-600">{product.price}</p>
-          <p className="mt-6 text-base text-gray-700">{product.description}</p>
-          
-          <div className="mt-10 p-6 bg-white rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-center">Scan to View in Your Space</h3>
-            <div className="mt-4 flex justify-center">
+        <div className="lg:col-span-2 flex flex-col justify-center">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{product.name}</h1>
+          <p className="mt-2 text-xl sm:text-3xl font-bold text-indigo-600">{product.price}</p>
+          <p className="mt-4 text-base sm:text-lg text-gray-700">{product.description}</p>
+          <div className="mt-6 sm:mt-10 p-4 sm:p-6 bg-white rounded-lg shadow-md">
+            <h3 className="text-md sm:text-lg font-semibold text-center">Scan to View in Your Space</h3>
+            <div className="mt-3 sm:mt-4 flex justify-center">
               <QRCodeDisplay url={window.location.href} />
             </div>
-            <p className="mt-4 text-xs text-gray-500 text-center">
+            <p className="mt-3 sm:mt-4 text-xs text-gray-500 text-center">
               Open your phone's camera and point it at the QR code to launch the AR experience.
             </p>
           </div>
