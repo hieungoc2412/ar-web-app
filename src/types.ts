@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 export interface Product {
   id: string;
   name: string;
